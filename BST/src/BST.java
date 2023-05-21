@@ -94,6 +94,18 @@ public class BST<K extends Comparable<K>, V> {
         return node;
     }
 
+    public int size() {
+        return size(root);
+    }
+
+    private int size(Node node) {
+        if (node == null) {
+            return 0;
+        } else {
+            return 1 + size(node.left) + size(node.right);
+        }
+    }
+
     public Iterable<K> iterator() {
         List<K> keys = new ArrayList<>();
         inorderTraversal(root, keys);
