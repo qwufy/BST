@@ -93,4 +93,19 @@ public class BST<K extends Comparable<K>, V> {
         node.left = deleteMinNode(node.left);
         return node;
     }
+
+    public Iterable<K> iterator() {
+        List<K> keys = new ArrayList<>();
+        inorderTraversal(root, keys);
+        return keys;
+    }
+
+    private void inorderTraversal(Node node, List<K> keys) {
+        if (node == null)
+            return;
+
+        inorderTraversal(node.left, keys);
+        keys.add(node.key);
+        inorderTraversal(node.right, keys);
+    }
 }
