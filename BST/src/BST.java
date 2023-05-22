@@ -120,4 +120,15 @@ public class BST<K extends Comparable<K>, V> {
         keys.add(node.key);
         inorderTraversal(node.right, keys);
     }
+
+    public int height(){
+        return height(root);
+    }
+
+    public int height(Node node){
+        if(node == null){
+            return 0;
+        }
+        return 1 + Math.max(height(node.right), height(node.left));
+    }
 }

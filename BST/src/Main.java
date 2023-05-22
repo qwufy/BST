@@ -16,6 +16,8 @@ public class Main {
 
         System.out.println("Size of the tree: " + bst.size());
 
+        System.out.println("Height of the tree: " + bst.height()); // Defence 5 test
+
         System.out.println("Keys in ascending order:");
         for (Integer key : bst.iterator()) {
             System.out.println(key);
